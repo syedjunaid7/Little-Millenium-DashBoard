@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.scss";
 import logo from "../../imgs/logo.png";
-import { UilEstate } from "@iconscout/react-unicons";
+
 // import { SidebarData } from "../Data/Data";
 // import { UilBars } from "@iconscout/react-unicons";
 const Sidebar = () => {
