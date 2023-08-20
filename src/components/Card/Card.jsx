@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
-import "./Card.scss"
+import "./Card.scss";
 export default function Card(props) {
   const [expanded, setExpanded] = useState(false);
   return (
-    <AnimateSharedLayout>
+    <LayoutGroup>
       {expanded ? (
         <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
         <CompactCard param={props} setExpanded={() => setExpanded(true)} />
       )}
-    </AnimateSharedLayout>
+    </LayoutGroup>
   );
-};
+}
 
 // Compact Card
 function CompactCard({ param, setExpanded }) {
@@ -112,7 +112,7 @@ function ExpandedCard({ param, setExpanded }) {
       <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
         <UilTimes onClick={setExpanded} />
       </div>
-        <span>{param.title}</span>
+      <span>{param.title}</span>
       <div className="chartContainer">
         <Chart options={data.options} series={param.series} type="area" />
       </div>
