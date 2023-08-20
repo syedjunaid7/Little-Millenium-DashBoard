@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { AnimateSharedLayout } from "framer-motion`";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { motion, AnimateSharedLayout } from "framer-motion";
+import { UilTimes } from "@iconscout/react-unicons";
+import Chart from "react-apexcharts";
+import "./Card.scss"
 export default function Card() {
   const [expanded, setExpanded] = useState();
   return (
