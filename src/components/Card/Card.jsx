@@ -5,8 +5,8 @@ import { motion, AnimateSharedLayout } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 import "./Card.scss"
-export default function Card() {
-  const [expanded, setExpanded] = useState();
+export default function Card(props) {
+  const [expanded, setExpanded] = useState(false);
   return (
     <AnimateSharedLayout>
       {expanded ? (
