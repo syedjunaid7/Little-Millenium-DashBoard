@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { motion, LayoutGroup } from "framer-motion";
+import { motion, AnimateSharedLayout } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
 import "./Card.scss";
 export default function Card(props) {
   const [expanded, setExpanded] = useState(false);
+  
+  const handleCardClick = () => {
+    setExpanded(!expanded);
+  };
+  
   return (
-    <LayoutGroup>
+    <motion.div layoutId="expandableCard">
       {expanded ? (
-        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+        <ExpandedCard param={props} setExpanded={handleCardClick} />
       ) : (
-        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+        <CompactCard param={props} setExpanded={handleCardClick} />
       )}
-    </LayoutGroup>
+    </motion.div>
   );
 }
 
