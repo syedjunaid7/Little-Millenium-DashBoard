@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import "./Card.scss";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { motion, AnimateSharedLayout } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
 import Chart from "react-apexcharts";
-import "./Card.scss";
+
 export default function Card(props) {
   const [expanded, setExpanded] = useState(false);
   
@@ -13,13 +14,14 @@ export default function Card(props) {
   };
   
   return (
-    <motion.div layoutId="expandableCard">
-      {expanded ? (
-        <ExpandedCard param={props} setExpanded={handleCardClick} />
+    <>
+      {
+        expanded ? (
+          <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
-        <CompactCard param={props} setExpanded={handleCardClick} />
+        <CompactCard param={props} setExpanded={() => setExpanded(true)} />
       )}
-    </motion.div>
+    </>
   );
 }
 
@@ -45,7 +47,7 @@ function CompactCard({ param, setExpanded }) {
       </div>
       <div className="detail">
         <Png />
-        <span>${param.value}</span>
+        <span>{param.value}</span>
         <span>Last 24 hours</span>
       </div>
     </motion.div>

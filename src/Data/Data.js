@@ -5,6 +5,7 @@ import {
     UilPackage,
     UilChart,
     UilBookReader,
+    UilRupeeSign,
     
   } from "@iconscout/react-unicons";
   
@@ -40,7 +41,7 @@ import {
     },
   ];
   
-  // Analytics Cards Data
+  // Cards Data
   export const cardsData = [
     {
       title: "Students",
@@ -50,7 +51,13 @@ import {
       },
       barValue: 70,
       value: "102",
-      png: UilUsdSquare,
+      png: UilBookReader,
+      series: [
+      {
+        name: "Students",
+        data: [10, 100, 50, 70, 80, 30, 40],
+      },
+    ],
     },
     {
       title: "Teachers",
@@ -60,7 +67,13 @@ import {
       },
       barValue: 80,
       value: "70",
-      png: UilMoneyWithdrawal,
+      png: UilUsersAlt,
+      series: [
+      {
+        name: "Teachers",
+        data: [10, 100, 50, 70, 80, 30, 40],
+      },
+    ],
     },
     {
       title: "Revenue",
@@ -70,8 +83,14 @@ import {
         boxShadow: "0px 10px 20px 0px #F9D59B",
       },
       barValue: 50,
-      value: "4,270",
-      png: UilClipboardAlt,
+      value: "45,270",
+      png: UilRupeeSign,
+      series: [
+      {
+        name: "Revenue",
+        data: [10, 100, 50, 70, 80, 30, 40],
+      },
+    ],
     },
   ];
   
