@@ -15,12 +15,16 @@ export default function Card(props) {
   
   return (
     <>
-      {
+          <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
+
+      {/* {
         expanded ? (
           <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
         <CompactCard param={props} setExpanded={() => setExpanded(true)} />
-      )}
+      )} */}
+      <CompactCard param={props} setExpanded={() => setExpanded(true)} />
+
     </>
   );
 }
