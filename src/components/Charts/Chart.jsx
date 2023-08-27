@@ -33,36 +33,36 @@ export default function Chart() {
     },
   });
 
-const [state2, setState2] = useState({
-  options: {
-    chart: {
-      type: "line",
-    },
-    series: [
-      {
-        name: "Boys",
-        data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+  const [state2, setState2] = useState({
+    options: {
+      chart: {
+        type: "line",
       },
-      {
-        name: "Girls",
-        data: [10, 20, 55, 40, 39, 40, 80, 41, 135],
-      },
-    ],
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Feb",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
+      series: [
+        {
+          name: "Boys",
+          data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+        },
+        {
+          name: "Girls",
+          data: [10, 20, 55, 40, 39, 40, 80, 41, 135],
+        },
       ],
+      xaxis: {
+        categories: [
+          "Jan",
+          "Feb",
+          "Feb",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+        ],
+      },
     },
-  },
-});
+  });
   useEffect(() => {
     var chart = new ApexCharts(document.querySelector("#chart"), state.options);
     chart.render();
@@ -70,18 +70,24 @@ const [state2, setState2] = useState({
 
   return (
     <div className="chart-box">
-      <ApexCharts
-        options={state.options}
-        series={state.options.series}
-        type="line"
-        width="450"
-      />
-      <ApexCharts
-        options={state2.options}
-        series={state2.options.series}
-        type="bar"
-        width="450"
-      />
+      <div>
+        <h2>Overview</h2>
+        <ApexCharts
+          options={state.options}
+          series={state.options.series}
+          type="line"
+          width="450"
+        />
+      </div>
+      <div>
+        <h2>Number of Students</h2>
+        <ApexCharts
+          options={state2.options}
+          series={state2.options.series}
+          type="bar"
+          width="450"
+        />
+      </div>
     </div>
   );
 }
