@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "../Cards/Cards";
 import Table from "../Table/Table";
 import Chart from "../Charts/Chart";
-
+import "./MainDash.scss"
 
 function MainDash() {
   return (
