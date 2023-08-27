@@ -71,7 +71,7 @@ export default function Chart() {
   return (
     <div className="chart-box">
       <div>
-        <h2>Overview</h2>
+        <h3>Overview</h3>
         <ApexCharts
           options={state.options}
           series={state.options.series}
@@ -80,7 +80,7 @@ export default function Chart() {
         />
       </div>
       <div>
-        <h2>Number of Students</h2>
+        <h3>Number of Students</h3>
         <ApexCharts
           options={state2.options}
           series={state2.options.series}
