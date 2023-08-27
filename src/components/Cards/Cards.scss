@@ -1,7 +1,7 @@
 .Cards {
     display: flex;
     gap: 8rem;
-  
+    width: 90%;
     @media screen and (max-width: 1200px) {
       flex-direction: column;
   
