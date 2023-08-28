@@ -10,7 +10,6 @@ function MainDash() {
       <h1>DashBoard</h1>
       <Cards />
       <Chart/>
-      <h2>Recent Orders</h2>
       <Table />
     </div>
   );

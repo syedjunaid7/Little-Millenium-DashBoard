@@ -1,0 +1,38 @@
+.table-div {
+    position: relative;
+    padding: 9px;
+    border-radius: 7px;
+    background-color: #F7F7FA;
+    padding: 2rem;
+    table {
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        color: #333333;
+        position: relative;
+      }
+      
+      thead {
+        border-radius: 9px !important;
+        position: sticky;
+        top: -9px;
+        background-color: #e58282;
+      }
+      
+      th,
+      td {
+        width: auto;
+        padding: 8px;
+        text-align: left;
+        border: none !important;
+        font-size: large;
+      }
+      
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      
+      tr:hover {
+        background-color: #e3d3d3ac;
+      }
+  }
