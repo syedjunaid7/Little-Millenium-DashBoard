@@ -9,10 +9,6 @@ const Sidebar = () => {
   const [selected, setSelected] = useState(0);
   return (
     <div className="Sidebar">
-      <div className="logo">
-        <img src={school} alt="logo" />
-      </div>
-
       <div className="menu">
         {SidebarData.map((item, index) => {
           return (

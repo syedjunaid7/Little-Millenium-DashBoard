@@ -1,7 +1,7 @@
 import React from "react";
-import Cards from "../Cards/Cards";
-import Table from "../Table/Table";
-import Chart from "../Charts/Chart";
+import Cards from "../../components/Cards/Cards";
+import Table from "../../components/Table/Table";
+import Chart from "../../components/Charts/Chart";
 import "./MainDash.scss"
 
 function MainDash() {
