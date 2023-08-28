@@ -26,7 +26,10 @@
   justify-content: center;
   font-family: 'Inter', sans-serif; */
 }
-
+.container{
+  display: flex;
+  
+}
 .AppGlass {
   /* display: grid;
   height: 97%;
