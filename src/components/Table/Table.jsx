@@ -4,7 +4,7 @@ import "./Table.scss"
 export default function () {
   return (
     <div className="table-div">
-    <h1>Star Students</h1>
+    <h2>Star Students</h2>
       <table className="table-lg">
         <thead>
           <th>S.No.</th>
