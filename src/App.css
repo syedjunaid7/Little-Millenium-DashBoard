@@ -14,7 +14,6 @@
 .App {
 
   height: 100vh;
-
   font-family: 'Inter', sans-serif; 
   background-color: #F7F7FA;
 }
@@ -23,5 +22,5 @@
   
 }
 .AppGlass {
-  background-color: #ededf0;
+  background: url("./imgs/home3.309907f5a7e58d11b1f1.svg");
 }
