@@ -5,13 +5,13 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  padding: 1rem;
   .topbarWrapper {
     height: 100%;
-    padding: 0 20px;
+    padding: 0px 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: url("../../imgs/home3.309907f5a7e58d11b1f1.svg");
     .logo{
         height: 50px;
     }
