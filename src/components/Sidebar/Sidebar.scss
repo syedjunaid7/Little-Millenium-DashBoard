@@ -1,115 +1,142 @@
-.Sidebar {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all 300ms ease;
-  position: sticky;
-  top: 50px;
-  padding: 1.5rem;
-  width: 15%;
-  // Tablets
-  @media screen and (max-width: 1200px) {
-    .menuItem > span {
-      display: none;
-    }
-    .logo {
-      display: none;
-    }
-  }
+// .Sidebar {
+//   display: flex;
+//   flex-direction: column;
+//   position: relative;
+//   transition: all 300ms ease;
+//   position: sticky;
+//   top: 50px;
+//   padding: 1.5rem;
+//   width: 15%;
+//   // Tablets
+//   @media screen and (max-width: 1200px) {
+//     .menuItem > span {
+//       display: none;
+//     }
+//     .logo {
+//       display: none;
+//     }
+//   }
 
-  // Mobile
-  @media screen and (max-width: 768px) {
-    position: fixed;
-    z-index: 9;
-    background: #ffe0e0;
-    width: 55%;
-    padding-right: 1rem;
-    height: 100%;
+//   // Mobile
+//   @media screen and (max-width: 768px) {
+//     position: fixed;
+//     z-index: 9;
+//     background: #ffe0e0;
+//     width: 55%;
+//     padding-right: 1rem;
+//     height: 100%;
 
-    .menuItem > span {
-      display: block;
-    }
-    .logo {
-      display: flex;
-    }
-    .menu .menuItem:last-child {
-      position: relative;
-      margin-top: 6rem;
-    }
-    .bars {
-      display: flex;
-      position: fixed;
-      top: 2rem;
-      left: 60%;
-      background: #ffe0e0;
-      padding: 10px;
-      border-radius: 10px;
-      z-index: 9;
-    }
-    .close {
-      left: -60%;
-    }
-  }
+//     .menuItem > span {
+//       display: block;
+//     }
+//     .logo {
+//       display: flex;
+//     }
+//     .menu .menuItem:last-child {
+//       position: relative;
+//       margin-top: 6rem;
+//     }
+//     .bars {
+//       display: flex;
+//       position: fixed;
+//       top: 2rem;
+//       left: 60%;
+//       background: #ffe0e0;
+//       padding: 10px;
+//       border-radius: 10px;
+//       z-index: 9;
+//     }
+//     .close {
+//       left: -60%;
+//     }
+//   }
+// }
+
+// // logo
+// .bars {
+//   display: none;
+// }
+
+// .logo {
+//   display: flex;
+//   height: 5rem;
+//   font-weight: bold;
+//   font-size: 22px;
+//   gap: 1rem;
+//   align-items: center;
+//   justify-content: center;
+//   height: 4%;
+
+//   > span > span {
+//     color: var(--pink);
+//   }
+
+//   > img {
+//     width: 10rem;
+//   }
+// }
+
+// // menu
+// .menu {
+//   margin-top: 2rem;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 2rem;
+//   position: fixed;
+// }
+
+// .menuItem {
+//   display: flex;
+//   align-items: center;
+//   gap: 1rem;
+//   height: 2.5rem;
+//   margin-left: 2rem;
+//   position: relative;
+//   transition: all 300ms ease;
+//   border-radius: 0.7rem;
+//   font-size: 14px;
+//   padding-right: 1rem;
+//   &:hover {
+//     cursor: pointer;
+//   }
+
+//   &.active {
+//     background: var(--activeItem);
+//     margin-left: 0;
+
+//     &::before {
+//       content: "";
+//       width: 8px;
+//       height: 100%;
+//       background: var(--pink);
+//       margin-right: calc(1rem - 8px);
+//     }
+//   }
+// }
+.container{
+  display:flex;
 }
-
-// logo
-.bars {
-  display: none;
+main{
+  width: 100%;
+  padding: 20px;
 }
-
-.logo {
-  display: flex;
-  height: 5rem;
-  font-weight: bold;
-  font-size: 22px;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  height: 4%;
-
-  > span > span {
-    color: var(--pink);
-  }
-
-  > img {
-    width: 10rem;
-  }
+.sidebar{
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  width: 200px;
+  transition: all 0.5s;
 }
-
-// menu
-.menu {
-  margin-top: 2rem;
+.top_section{
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: fixed;
+  align-items:center;
+  padding:20px 15px;
 }
-
-.menuItem {
+.logo{
+  font-size: 30px;
+}
+.bars{
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  height: 2.5rem;
-  margin-left: 2rem;
-  position: relative;
-  transition: all 300ms ease;
-  border-radius: 0.7rem;
-  font-size: 14px;
-  padding-right: 1rem;
-  &:hover {
-    cursor: pointer;
-  }
-
-  &.active {
-    background: var(--activeItem);
-    margin-left: 0;
-
-    &::before {
-      content: "";
-      width: 8px;
-      height: 100%;
-      background: var(--pink);
-      margin-right: calc(1rem - 8px);
-    }
-  }
+  font-size: 25px;
+  margin-left: 50px;
 }
