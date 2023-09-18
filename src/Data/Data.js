@@ -9,9 +9,11 @@ import {
     
   } from "@iconscout/react-unicons";
   
-  // Analytics Cards imports
-  import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
-  import { keyboard } from "@testing-library/user-event/dist/keyboard";
+ 
+
+  import {MdAddchart} from 'react-icons/md';
+  import {MdOutlineManageAccounts} from "react-icons/md"
+  import {BsFillChatLeftFill} from "react-icons/bs"
   // Recent Card Imports
   import img1 from "../imgs/img1.png";
   import img2 from "../imgs/img2.png";
@@ -24,20 +26,16 @@ import {
       heading: "Dashboard",
     },
     {
-      icon: UilBookReader,
-      heading: "Students",
+      icon: MdAddchart,
+      heading: "Add Product",
     },
     {
-      icon: UilUsersAlt,
-      heading: "Teachers",
+      icon: MdOutlineManageAccounts,
+      heading: "Account",
     },
     {
-      icon: UilPackage,
-      heading: 'Fees'
-    },
-    {
-      icon: UilChart,
-      heading: 'Analytics'
+      icon: BsFillChatLeftFill,
+      heading: 'Report Bug'
     },
   ];
   
