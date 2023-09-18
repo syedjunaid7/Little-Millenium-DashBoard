@@ -1,72 +1,33 @@
-import React, { useState } from 'react';
-import {
-    FaTh,
-    FaBars,
-    FaUserAlt,
-    FaRegChartBar,
-    FaCommentAlt,
-    FaShoppingBag,
-    FaThList
-}from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
-
-
+import React, { useState } from "react";
+import "./Sidebar.scss";
+import logo from "../../imgs/logo.png";
+import school from "../../imgs/logo.gif";
+import { SidebarData } from "../../Data/Data";
+import { UilSignOutAlt } from "@iconscout/react-unicons";
+import { UilBars } from "@iconscout/react-unicons";
 const Sidebar = () => {
-    const[isOpen ,setIsOpen] = useState(false);
-    const toggle = () => setIsOpen (!isOpen);
-    const menuItem=[
-        {
-            path:"/",
-            name:"Dashboard",
-            icon:<FaTh/>
-        },
-        {
-            path:"/about",
-            name:"About",
-            icon:<FaUserAlt/>
-        },
-        {
-            path:"/analytics",
-            name:"Analytics",
-            icon:<FaRegChartBar/>
-        },
-        {
-            path:"/comment",
-            name:"Comment",
-            icon:<FaCommentAlt/>
-        },
-        {
-            path:"/product",
-            name:"Product",
-            icon:<FaShoppingBag/>
-        },
-        {
-            path:"/productList",
-            name:"Product List",
-            icon:<FaThList/>
-        }
-    ]
-    return (
-        <div className="container">
-           <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
-               <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
-                   <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
-                       <FaBars onClick={toggle}/>
-                   </div>
-               </div>
-               {
-                   menuItem.map((item, index)=>(
-                       <NavLink to={item.path} key={index} className="link" activeclassName="active">
-                           <div className="icon">{item.icon}</div>
-                           <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
-                       </NavLink>
-                   ))
-               }
-           </div>
-           {/* <main>{children}</main> */}
+  const [selected, setSelected] = useState(0);
+  return (
+    <div className="Sidebar">
+      <div className="menu">
+        {SidebarData.map((item, index) => {
+          return (
+            <div
+              className={selected === index ? "menuItem active" : "menuItem"}
+              key={index}
+              onClick={() => setSelected(index)}
+            >
+              <item.icon />
+              <span>{item.heading}</span>
+            </div>
+          );
+        })}
+        <div className="menuItem">
+          <UilSignOutAlt />
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Sidebar;
