@@ -1,90 +1,3 @@
-.Sidebar {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all 300ms ease;
-  position: sticky;
-  top: 50px;
-  padding: 1.5rem;
-  width: 15%;
-  // Tablets
-  @media screen and (max-width: 1200px) {
-    .menuItem > span {
-      display: none;
-    }
-    .logo {
-      display: none;
-    }
-  }
-
-  // Mobile
-  @media screen and (max-width: 768px) {
-    position: fixed;
-    z-index: 9;
-    background: #ffe0e0;
-    width: 55%;
-    padding-right: 1rem;
-    height: 100%;
-
-    .menuItem > span {
-      display: block;
-    }
-    .logo {
-      display: flex;
-    }
-    .menu .menuItem:last-child {
-      position: relative;
-      margin-top: 6rem;
-    }
-    .bars {
-      display: flex;
-      position: fixed;
-      top: 2rem;
-      left: 60%;
-      background: #ffe0e0;
-      padding: 10px;
-      border-radius: 10px;
-      z-index: 9;
-    }
-    .close {
-      left: -60%;
-    }
-  }
-}
-
-// logo
-.bars {
-  display: none;
-}
-
-.logo {
-  display: flex;
-  height: 5rem;
-  font-weight: bold;
-  font-size: 22px;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  height: 4%;
-
-  > span > span {
-    color: var(--pink);
-  }
-
-  > img {
-    width: 10rem;
-  }
-}
-
-// menu
-.menu {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: fixed;
-}
-
 .menuItem {
   display: flex;
   align-items: center;
@@ -114,47 +27,28 @@
   }
 }
 
+.container{
 
-// .container{
-//   display:flex;
-// }
+}
+.sidebar{
+  background: #0002;
+  backdrop-filter: blur(10px);
+  height: auto;
+  transition: all 0.5s;
 
-// .sidebar{
-//   background: #000;
-//   color: #fff;
-//   height: 100vh;
-//   width: 200px;
-//   transition: all 0.5s;
-// }
-// .top_section{
-//   display: flex;
-//   align-items:center;
-//   padding:20px 15px;
-// }
-// .logo{
-//   font-size: 30px;
-// }
-// .bars{
-//   display: flex;
-//   font-size: 25px;
-//   margin-left: 50px;
-// }
-// .link{
-//   display: flex;
-//   color: #fff;
-//   padding: 10px 15px;
-//   gap: 15px;
-//   transition: all 0.5s;
-// }
-// .link:hover{
-//   background:lightskyblue;
-//   color: #000;
-//   transition: all 0.5s;
-// }
-// .active{
-//   background: lightskyblue;
-//   color: #000;
-// }
-// .icon, .link_text{
-//   font-size: 20px;
-// }
+  bottom: 0;
+}
+.top_section{
+  display: flex;
+  align-items:center;
+  padding:20px 15px;
+  position: sticky;
+  top: 2rem;
+}
+.logo{
+  font-size: 30px;
+}
+.bars{
+  display: flex;
+  font-size: 25px;
+}

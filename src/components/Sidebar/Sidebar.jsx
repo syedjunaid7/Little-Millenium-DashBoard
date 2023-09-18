@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.scss";
-import logo from "../../imgs/logo.png";
-import school from "../../imgs/logo.gif";
 import { SidebarData } from "../../Data/Data";
-import { UilSignOutAlt } from "@iconscout/react-unicons";
-import { UilBars } from "@iconscout/react-unicons";
 import { MdLogout } from "react-icons/md";
 import {HiMiniBars3CenterLeft} from "react-icons/hi2"
 const Sidebar = () => {
@@ -12,8 +8,8 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <div className="Sidebar">
-      <div className="menu" style={{ width: isOpen ? "200px" : "50px" }}>
+    <div className="container">
+      <div style={{ width: isOpen ? "200px" : "80px" }}  className="sidebar">
         <div className="top_section">
           <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
             Logo
