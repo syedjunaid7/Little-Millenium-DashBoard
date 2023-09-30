@@ -15,15 +15,15 @@ function App() {
           <Topbar />
           <div className="container">
             <Sidebar />
-            <MainDash />
+            <Routes>
+              <Route path="/" element={<MainDash />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/product" element={<Product />} />
+              <Route path="/bug" element={<Bug />} />
+            </Routes>
           </div>
         </div>
       </div>
-      <Routes>
-        <Route path="/account" element={<Account />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/bug" element={<Bug />} />
-      </Routes>
     </BrowserRouter>
   );
 }
