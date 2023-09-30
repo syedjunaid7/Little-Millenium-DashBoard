@@ -3,6 +3,7 @@ import "./Sidebar.scss";
 import { SidebarData } from "../../Data/Data";
 import { MdLogout } from "react-icons/md";
 import {HiMiniBars3CenterLeft} from "react-icons/hi2"
+
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
   const [isOpen, setIsOpen] = useState(false);

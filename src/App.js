@@ -20,9 +20,9 @@ function App() {
         </div>
       </div>
       <Routes>
-        <Route element={<Account />} />
-        <Route element={<Product />} />
-        <Route element={<Bug />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/bug" element={<Bug />} />
       </Routes>
     </BrowserRouter>
   );

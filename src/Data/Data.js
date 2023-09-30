@@ -19,10 +19,12 @@ export const SidebarData = [
   {
     icon: MdOutlineSpaceDashboard,
     heading: "Dashboard",
+    to : "/"
   },
   {
     icon: MdAddchart,
     heading: "Add Product",
+    to : ""
   },
   {
     icon: MdOutlineManageAccounts,
