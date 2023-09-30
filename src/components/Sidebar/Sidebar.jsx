@@ -3,8 +3,10 @@ import "./Sidebar.scss";
 import { SidebarData } from "../../Data/Data";
 import { MdLogout } from "react-icons/md";
 import {HiMiniBars3CenterLeft} from "react-icons/hi2"
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate()
   const [selected, setSelected] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -27,7 +29,7 @@ const Sidebar = () => {
               onClick={() => setSelected(index)}
             >
               <item.icon />
-              <span style={{display: isOpen ? "block" : "none"}}>{item.heading}</span>
+              <span style={{display: isOpen ? "block" : "none"}} onClick={() => navigate(`/${item.to}`)}>{item.heading}</span>
             </div>
           );
         })}
