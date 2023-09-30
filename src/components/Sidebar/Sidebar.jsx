@@ -28,8 +28,8 @@ const Sidebar = () => {
               key={index}
               onClick={() => setSelected(index)}
             >
-              <item.icon />
-              <span style={{display: isOpen ? "block" : "none"}} onClick={() => navigate(`/${item.to}`)}>{item.heading}</span>
+              <item.icon onClick={() => navigate(`${item.to}`)}/>
+              <span style={{display: isOpen ? "block" : "none"}} onClick={() => navigate(`${item.to}`)}>{item.heading}</span>
             </div>
           );
         })}

@@ -24,12 +24,12 @@ export const SidebarData = [
   {
     icon: MdAddchart,
     heading: "Add Product",
-    to : "product"
+    to : "/product"
   },
   {
     icon: MdOutlineManageAccounts,
     heading: "Account",
-    to : "account"
+    to : "/account"
   },
   {
     icon: BsFillChatLeftFill,
