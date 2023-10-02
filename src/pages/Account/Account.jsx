@@ -1,7 +1,11 @@
-import React from 'react'
-import "./Account.scss"
+import React from "react";
+import "./Account.scss";
+import InputUser from "../../components/AddUserInput/InputUser";
+
 export default function Account() {
   return (
-    <div>Account</div>
-  )
+    <>
+      <InputUser />
+    </>
+  );
 }

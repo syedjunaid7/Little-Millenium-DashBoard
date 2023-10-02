@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 :root {
-  --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+  --yellow: linear-gradient(180deg, #f8d49a -146.42%, #fad79d -46.42%);
   --orange: #fca61f;
   --black: #242d49;
   --gray: #788097;
-  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
-  --pink: #FF919D;
+  --purple: linear-gradient(180deg, #bb67ff 0%, #c484f3 100%);
+  --pink: #ff919d;
   --glass: rgba(255, 255, 255, 0.54);
   --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
   --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
@@ -12,11 +13,49 @@
 }
 
 .App {
-  font-family: 'Inter', sans-serif; 
+  font-family: "Poppins", sans-serif;
 }
-.container{
+.container {
   display: flex;
 }
 .AppGlass {
   background: url("./imgs/home3.309907f5a7e58d11b1f1.svg");
 }
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  background-color: #0ea5e9;
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.9rem;
+  cursor: pointer;
+}
+ input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  opacity: 0;
+  outline: none;
+  cursor: inherit;
+  display: block;
+}
+
+button {
+  background-color: #bae6fd;
+  border-style: none;
+  width: 100%;
+  height: 3rem;
+  border-radius: 0.3rem;
+  color: #0c4a6e;
+  font-size: 1.2rem;
+}
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
