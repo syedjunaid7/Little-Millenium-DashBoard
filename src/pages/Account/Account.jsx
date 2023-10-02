@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Account.scss";
-import InputUser from "../../components/AddUserInput/InputUser";
+import EditProfile from "../../components/EditProfile/EditProfile";
+import AccountProfile from "../../components/AccountProfile/AccountProfile";
 
 export default function Account() {
+  const [isEdit, setisEdit] = useState(false);
   return (
-    <>
-      <InputUser />
-    </>
+    <div className="accountContainer">
+     <img alt="" />
+      {isEdit ? (
+        <EditProfile setisEdit={setisEdit} />
+      ) : (
+        <AccountProfile setisEdit={setisEdit} />
+      )}
+    </div>
   );
 }

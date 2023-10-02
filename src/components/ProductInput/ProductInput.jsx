@@ -7,14 +7,14 @@ export default function ProductInput() {
     setImgData(URL.createObjectURL(e.target.files[0]));
   };
 
-const handleSubmit = () =>{
-  axios
-    .post("https://651af42a340309952f0e1806.mockapi.io/products", {
-      imgData,
-    })
-    .then((res) => setImgData(''));
-}
-console.log(imgData);
+  const handleSubmit = () => {
+    axios
+      .post("https://651af42a340309952f0e1806.mockapi.io/products", {
+        imgData,
+      })
+      .then((res) => setImgData(""));
+  };
+  console.log(imgData);
   return (
     <div className="inputMainBox">
       <h1>
@@ -38,12 +38,12 @@ console.log(imgData);
             <p>No Image has set for this product</p>
           )}
         </div>
-        <div className="inputBox">
-          <input type="text" placeholder="Product Name" />
-          <input type="text" placeholder="Product Category" />
-          <input type="text" placeholder="Product Price" />
-          <input type="text" placeholder="Product Quantity" />
-        </div>
+        <form className="inputBox">
+          <input type="text" placeholder="Product Name" required />
+          <input type="text" placeholder="Product Category" required />
+          <input type="text" placeholder="Product Price" required />
+          <input type="text" placeholder="Product Quantity" required />
+        </form>
         <button onClick={handleSubmit}> Save Product</button>
       </div>
     </div>

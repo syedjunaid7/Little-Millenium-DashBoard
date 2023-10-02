@@ -1,11 +1,10 @@
 import React from "react";
-import "./InputUser.scss";
+import "./AccountProfile.scss";
 
-export default function InputUser() {
+export default function AccountProfile({setisEdit}) {
   return (
     <div className="pofileBox">
-      <div className="profileBox2">
-        <img src="" alt="user-img" />
+      <div className="inputMainBox2">
         <div className="detailsBox">
           <p>
             <strong>Name :</strong> Jack
@@ -19,7 +18,7 @@ export default function InputUser() {
             <strong>Phone :</strong> 8756XXXX
           </p>
           <hr />
-          <button>Edit Profile</button>
+          <button onClick={() => setisEdit(true)}>Edit Profile</button>
         </div>
       </div>
     </div>
