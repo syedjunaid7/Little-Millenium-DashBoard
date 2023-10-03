@@ -7,13 +7,20 @@ export default function Account() {
   const [isEdit, setisEdit] = useState(false);
   const [imgData, setimgData] = useState("");
   const value = JSON.parse(localStorage.getItem("details"));
-  console.log(value.userPic);
+  useEffect(() => {
+    setimgData(value?.userPic);
+  }, [isEdit]);
+
   console.log(imgData);
   return (
     <div className="accountContainer">
-      <img src={value.userPic}/>
+      <img src={imgData} />
       {isEdit ? (
-        <EditProfile setisEdit={setisEdit} setimgData={setimgData}/>
+        <EditProfile
+          setisEdit={setisEdit}
+          setimgData={setimgData}
+          imgData={imgData}
+        />
       ) : (
         <AccountProfile setisEdit={setisEdit} />
       )}

@@ -2,13 +2,11 @@ import React from "react";
 import "./EditProfile.scss";
 import { useState } from "react";
 
-export default function EditProfile({ setisEdit, setimgData }) {
+export default function EditProfile({ setisEdit, setimgData, imgData }) {
   const value = JSON.parse(localStorage.getItem("details"));
-  const [userName, setUserName] = useState(value.userName);
-  const [userEmail, setUserEmail] = useState(value.userEmail);
-  const [userPhone, setUserPhone] = useState(value.userPhone);
-  const [userPic, setuserPic] = useState(value.userPic);
-  const [details, setDetails] = useState();
+  const [userName, setUserName] = useState(value?.userName);
+  const [userEmail, setUserEmail] = useState(value?.userEmail);
+  const [userPhone, setUserPhone] = useState(value?.userPhone);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -16,7 +14,7 @@ export default function EditProfile({ setisEdit, setimgData }) {
       userName: userName,
       userEmail: userEmail,
       userPhone: userPhone,
-      userPic: userPic,
+      userPic: imgData,
     };
     const userDetailsString = JSON.stringify(userDetails);
     localStorage.setItem("details", userDetailsString);
@@ -34,7 +32,6 @@ export default function EditProfile({ setisEdit, setimgData }) {
               onChange={(e) =>
                 setimgData(URL.createObjectURL(e.target.files[0]))
               }
-              src={details}
             />
           </span>
         </div>

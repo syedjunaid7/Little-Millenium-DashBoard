@@ -3,6 +3,10 @@ import "./ProductInput.scss";
 import axios from "axios";
 export default function ProductInput() {
   const [imgData, setImgData] = useState();
+  const [productName, setproductName] = useState();
+  const [productCatg, setproductCatg] = useState();
+  const [productPrice, setproductPrice] = useState();
+  const [productQuant, setproductQuant] = useState();
   const handleInputImg = (e) => {
     setImgData(URL.createObjectURL(e.target.files[0]));
   };
@@ -11,6 +15,10 @@ export default function ProductInput() {
     axios
       .post("https://651af42a340309952f0e1806.mockapi.io/products", {
         imgData,
+        productName,
+        productCatg,
+        productPrice,
+        productQuant,
       })
       .then((res) => setImgData(""));
   };
@@ -38,13 +46,33 @@ export default function ProductInput() {
             <p>No Image has set for this product</p>
           )}
         </div>
-        <form className="inputBox">
-          <input type="text" placeholder="Product Name" required />
-          <input type="text" placeholder="Product Category" required />
-          <input type="text" placeholder="Product Price" required />
-          <input type="text" placeholder="Product Quantity" required />
+        <form className="inputBox" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Product Name"
+            required
+            onChange={(e) => setproductName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Product Category"
+            required
+            onChange={(e) => setproductCatg(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Product Price"
+            required
+            onChange={(e) => setproductPrice(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Product Quantity"
+            required
+            onChange={(e) => setproductQuant(e.target.value)}
+          />
+          <button> Save Product</button>
         </form>
-        <button onClick={handleSubmit}> Save Product</button>
       </div>
     </div>
   );
