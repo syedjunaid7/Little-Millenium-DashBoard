@@ -1,0 +1,28 @@
+.bugBox {
+  width: 100%;
+  padding: 0 1rem;
+  .textAreaBug {
+    height: 30vh;
+    border-style: none;
+    box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.577);
+    border-radius: 0.3rem;
+    padding: 0.6rem;
+    width: auto;
+    resize: vertical;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .contact {
+    margin-top: 3rem;
+    background-color: #0ea5e9;
+    color: #fff;
+    letter-spacing: 1.5px;
+  }
+  button {
+    position: relative;
+  }
+  .loader {
+    position: absolute;
+    left: 35%;
+  }
+}
