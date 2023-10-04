@@ -58,6 +58,10 @@ button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+.loader {
+  position: absolute;
+  left: 35%;
+}
 
 /* input Boxes styles */
 .imgBox {

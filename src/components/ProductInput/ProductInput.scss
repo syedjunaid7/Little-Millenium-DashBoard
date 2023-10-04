@@ -1,5 +1,25 @@
 .inputMainBox {
   width: 100%;
   padding: 0 1rem;
-  height: 100vh;
+}
+
+.imgBox {
+  position: relative;
+  .imgRequire {
+    position: absolute;
+    bottom: 3.3rem;
+    right: 1rem;
+    background-color: rgb(246, 29, 29);
+    color: #fff;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.7rem;
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  .productImg{
+    height: 9rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0.3rem;
+  }
 }
