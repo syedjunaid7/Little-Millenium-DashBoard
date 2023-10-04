@@ -91,7 +91,7 @@ export default function ProductInput() {
             value={productCatg}
           />
           <input
-            type="text"
+            type="number"
             placeholder="Product Price"
             required
             onChange={(e) => setproductPrice(e.target.value)}

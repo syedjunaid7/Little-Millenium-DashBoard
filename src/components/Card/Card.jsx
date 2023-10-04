@@ -1,52 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Card.scss";
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import axios from "axios";
+import { PiShoppingCartSimpleBold } from "react-icons/pi";
+import { FaIndianRupeeSign } from "react-icons/fa6";
+import { BsCartXFill } from "react-icons/bs";
 
+export default function Card() {
+  const [price, setPrice] = useState(0);
+  useEffect(() => {
+  axios("https://651af42a340309952f0e1806.mockapi.io/products").then(
+    (response) => {
+      const totalPrice = response.data.reduce((accumulator, item) => {
+        return accumulator + +item.productPrice;
+      }, 0);
+      setPrice(totalPrice);
 
-export default function Card(props) {
-  const [expanded, setExpanded] = useState(false);
-  
-  const handleCardClick = () => {
-    setExpanded(!expanded);
-  };
-  
+      const data = response.data.map((item) => {
+        
+      })
+    }
+  );
+}, []);
+
+  console.log(price);
   return (
-    <>
-      <CompactCard param={props} setExpanded={() => setExpanded(true)} />
-    </>
+    <div className="cards">
+      <div className="card red">
+        <PiShoppingCartSimpleBold style={{ fontSize: "2.5rem" }} />
+        <div className="detailsSec">
+          <span className="tip">Total Products</span>:
+          <span className="second-text">{price.id}</span>
+        </div>
+      </div>
+      <div className="card blue">
+        <FaIndianRupeeSign style={{ fontSize: "1.9rem" }} />
+        <div className="detailsSec">
+          <span className="tip">Total Store Value</span>:
+          <span className="second-text">{price}</span>
+        </div>
+      </div>
+      <div className="card green">
+        <BsCartXFill style={{ fontSize: "2.5rem" }} />
+        <div className="detailsSec">
+          <span className="tip">Out of Stock</span>
+          <span className="second-text">0</span>
+        </div>
+      </div>
+    </div>
   );
 }
-
-// Compact Card
-function CompactCard({ param, setExpanded }) {
-  const Png = param.png;
-  return (
-    <motion.div
-      className="CompactCard"
-      style={{
-        background: param.color.backGround,
-        boxShadow: param.color.boxShadow,
-      }}
-      layoutId="expandableCard"
-      onClick={setExpanded}
-    >
-      <div className="radialBar">
-        <CircularProgressbar
-          value={param.barValue}
-          text={`${param.barValue}%`}
-        />
-        <span>{param.title}</span>
-      </div>
-      <div className="detail">
-        <Png />
-        <span>{param.value}</span>
-        <span>Last 24 hours</span>
-      </div>
-    </motion.div>
-  );
-}
-
-
-
