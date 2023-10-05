@@ -1,28 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Card.scss";
-import axios from "axios";
+
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { BsCartXFill } from "react-icons/bs";
 
-export default function Card() {
-  const [price, setPrice] = useState(0);
-  useEffect(() => {
-  axios("https://651af42a340309952f0e1806.mockapi.io/products").then(
-    (response) => {
-      const totalPrice = response.data.reduce((accumulator, item) => {
-        return accumulator + +item.productPrice;
-      }, 0);
-      setPrice(totalPrice);
+export default function Card({price}) {
 
-      const data = response.data.map((item) => {
-        
-      })
-    }
-  );
-}, []);
 
-  console.log(price);
   return (
     <div className="cards">
       <div className="card red">

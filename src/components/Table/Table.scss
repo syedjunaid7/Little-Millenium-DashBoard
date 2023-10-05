@@ -1,37 +1,55 @@
 .table-div {
-    position: relative;
-    padding: 9px;
-    border-radius: 7px;
-   background-color: white;
-   border-radius: .9rem;
-    padding: 2rem;
-    table {
-        border-collapse: collapse;
-        font-family: Arial, sans-serif;
-        color: #333333;
-        position: relative;
-      }
-      
-      thead {
-        border-radius: 9px !important;
-        background-color: #e58282;
-      }
-      
-      th,
-      td {
-        width: auto;
-        padding: 8px;
-        text-align: left;
-        border: none !important;
-        font-size: large;
-      }
-      
-      th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-      }
-      
-      tr:hover {
-        background-color: #e3d3d3ac;
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 7px;
+  background-color: white;
+  border-radius: 0.9rem;
+  width: 100%;
+  padding-top: 1rem;
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.273);
+
+  table {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    width: 100%;
   }
+
+  thead {
+    background-color: #e58282;
+  }
+
+  th,
+  td {
+    width: auto;
+    padding: 8px;
+    text-align: left;
+    border: none !important;
+    font-size: large;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  tr:hover {
+    background-color: #e3d3d3ac;
+  }
+  .btn {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    .btns{
+      font-size: 1.2rem;
+      &:hover{
+        color: #3b82f6;
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+
+    }
+  }
+}

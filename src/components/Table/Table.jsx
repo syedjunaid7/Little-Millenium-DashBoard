@@ -1,26 +1,38 @@
 import React from "react";
-import { tableData } from "../../Data/Data";
-import "./Table.scss"
-export default function () {
+import { AiFillEye } from "react-icons/ai";
+import { FiEdit } from "react-icons/fi";
+import { MdDeleteForever } from "react-icons/md";
+import "./Table.scss";
+import { useNavigate } from "react-router-dom";
+export default function ({ product }) {
+  const navigate = useNavigate()
   return (
     <div className="table-div">
-    <h2>Star Students</h2>
-      <table className="table-lg">
+      <h2>Inventory Items</h2>
+      <table className="table-lg" cellSpacing="5px">
         <thead>
-          <th>S.No.</th>
-          <th>Name</th>
-          <th>Marks</th>
-          <th>Percentage</th>
-          <th>Year</th>
+          <tr>
+            <th>s/n</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action Buttons</th>
+          </tr>
         </thead>
         <tbody>
-          {tableData.map((item,index) => (
-            <tr>
-              <td>{index + 1}</td>
-              <td>{item.name}</td>
-              <td>{item.marks}</td>
-              <td>{item.perccentage}</td>
-              <td>{item.year}</td>
+          {product.map((item, index) => (
+            <tr >
+              <td >{index + 1}</td>
+              <td>{item.productName}</td>
+              <td >{item.productCatg}</td>
+              <td>{item.productPrice}</td>
+              <td>{item.productQuant}</td>
+              <td className="btn">
+                <AiFillEye className="btns"/>
+                <FiEdit className="btns" onClick={() => navigate("/product")}/>
+                <MdDeleteForever className="btns"/>
+              </td>
             </tr>
           ))}
         </tbody>
