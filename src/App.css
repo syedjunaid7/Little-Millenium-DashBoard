@@ -15,10 +15,20 @@
 .App {
   font-family: "Poppins", sans-serif;
 }
-.container {
+.MainContainer {
   display: flex;
+  height: 100vh;
 }
-
+.dashBoardContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+hr{
+  border-color: #e4e8e989;
+}
 .btn-file {
   position: relative;
   overflow: hidden;

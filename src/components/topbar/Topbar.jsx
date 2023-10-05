@@ -4,13 +4,22 @@ import logo from "../../imgs/logo.gif";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import LanguageIcon from "@mui/icons-material/Language";
 import SettingsIcon from "@mui/icons-material/Settings";
-import avatar from "../../imgs/avatar-01.jpg"
+import { useEffect } from "react";
+import { useState } from "react";
+
 export default function Topbar() {
+  const userDataLocal = JSON.parse(localStorage.getItem("details"));
+  const [userData, setUserData] = useState(userDataLocal);
+  useEffect(() => {
+    setUserData(userDataLocal);
+  }, [userDataLocal.userPic, userDataLocal.userName]);
   return (
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <img src={logo} alt="logo" className="logo"/>
+          <h2>
+            Hey, <span style={{ color: "#0ea5e9" }}>{userData.userName}</span>
+          </h2>
         </div>
         <div className="topRight">
           <div className="topbarIcons">
@@ -24,9 +33,11 @@ export default function Topbar() {
           <div className="topbarIcons">
             <SettingsIcon />
           </div>
-          <img src={avatar} alt="avatar" />
+          <img src={userData.userPic} alt="avatar" />
         </div>
       </div>
+      <hr />
+
     </div>
   );
 }

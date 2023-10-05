@@ -11,10 +11,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="AppGlass">
-          <Topbar />
-          <div className="container">
-            <Sidebar />
+        <div className="MainContainer">
+          <Sidebar />
+          <div className="dashBoardContainer">
+            <Topbar />
             <Routes>
               <Route path="/" element={<MainDash />} />
               <Route path="/account" element={<Account />} />

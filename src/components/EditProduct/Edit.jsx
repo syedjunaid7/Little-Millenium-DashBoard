@@ -4,7 +4,15 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import BarLoader from "react-spinners/BarLoader";
+import { useEffect } from "react";
 export default function Edit() {
+    
+    useEffect(() => {
+        axios("https://651af42a340309952f0e1806.mockapi.io/products")
+        .then((data) => {
+
+        })
+    })
   return (
     <div>
       <div className="inputMainBox">
