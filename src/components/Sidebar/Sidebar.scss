@@ -1,3 +1,6 @@
+.SideBarcontainer {
+  // height: 100vh;
+}
 .menuItem {
   display: flex;
   align-items: center;
@@ -27,28 +30,27 @@
   }
 }
 
-.container{
-
-}
-.sidebar{
+.sidebar {
   background: #0002;
   backdrop-filter: blur(10px);
-  height: auto;
+  height: 100vh;
   transition: all 0.5s;
-
   bottom: 0;
 }
-.top_section{
+.top_section {
   display: flex;
-  align-items:center;
-  padding:20px 15px;
-  position: sticky;
-  top: 2rem;
+  // justify-content: center;
+  padding-top: 2.5rem;
+  padding: 2.5rem 1.5rem 1rem 1.5rem;
+  h1 {
+    margin: 0;
+    translate: 0 -0.8rem;
+  }
 }
-.logo{
+.logo {
   font-size: 30px;
 }
-.bars{
+.bars {
   display: flex;
   font-size: 25px;
 }

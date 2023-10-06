@@ -42,14 +42,25 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
-    .btns{
+    .btns {
       font-size: 1.2rem;
-      &:hover{
+      &:hover {
         color: #3b82f6;
         cursor: pointer;
         transform: scale(1.2);
       }
-
+    }
+  }
+}
+@media (max-width: 900px) {
+  .table-div {
+    overflow: scroll;
+    align-items: normal;
+    h2 {
+      position: sticky;
+      top: 0;
+      left: 0;
+      text-align: center;
     }
   }
 }
