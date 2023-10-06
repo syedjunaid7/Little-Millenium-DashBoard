@@ -108,6 +108,6 @@ input {
 }
 @media (max-width : 900px){
   .dashBoardContainer{
-    overflow: hidden;
+    overflow: scroll;
   }
 }

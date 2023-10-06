@@ -15,8 +15,6 @@ function MainDash() {
           return accumulator + +item.productPrice;
         }, 0);
         setPrice(totalPrice);
-
-        const wholeProduct = 
         setProduct(response.data);
       }
     );

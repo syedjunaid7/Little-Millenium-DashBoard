@@ -5,6 +5,7 @@ import { MdDeleteForever } from "react-icons/md";
 import "./Table.scss";
 import { useNavigate } from "react-router-dom";
 export default function ({ product }) {
+
   const navigate = useNavigate()
   return (
     <div className="table-div">
