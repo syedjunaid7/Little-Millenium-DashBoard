@@ -8,40 +8,46 @@
   height: 2.5rem;
   margin-left: 2rem;
   position: relative;
-  transition: all 300ms ease;
+  transition: all 100ms ease;
   border-radius: 0.7rem;
   font-size: 14px;
   padding-right: 1rem;
+  margin-top: 1rem;
   &:hover {
     cursor: pointer;
   }
 
   &.active {
-    background: var(--activeItem);
+    // background: var(--activeItem);
+    background: #3b82f6;
+    color: white;
     margin-left: 0;
-
+    padding: 0.3rem 0;
     &::before {
       content: "";
       width: 8px;
       height: 100%;
-      background: var(--pink);
-      margin-right: calc(1rem - 8px);
+      padding: 0.3rem 0;
+      // background: var(--pink);
+      background: #003488;
     }
   }
 }
 
 .sidebar {
-  background: #0002;
+  // background: #e8f1ff;
   backdrop-filter: blur(10px);
+  background: #f8fcff;
+
+  box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.153);
   height: 100vh;
   transition: all 0.5s;
   bottom: 0;
 }
 .top_section {
   display: flex;
-  // justify-content: center;
   padding-top: 2.5rem;
-  padding: 2.5rem 1.5rem 1rem 1.5rem;
+  padding: 2.5rem 1.5rem 0 1.5rem;
   h1 {
     margin: 0;
     translate: 0 -0.8rem;

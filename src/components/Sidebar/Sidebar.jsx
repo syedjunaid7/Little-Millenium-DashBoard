@@ -22,7 +22,7 @@ const Sidebar = () => {
             Logo
           </h1>
           <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
-            <HiMiniBars3CenterLeft onClick={toggle} />
+            <HiMiniBars3CenterLeft onClick={toggle} style={{cursor : "pointer"}}/>
           </div>
         </div>
         {SidebarData.map((item, index) => {
@@ -31,16 +31,24 @@ const Sidebar = () => {
               className={selected === index ? "menuItem active" : "menuItem"}
               key={index}
               onClick={() => handleSelect(index, item.to)}
+
             >
-              <item.icon />
-              <span style={{ display: isOpen ? "block" : "none" }}>
+              <item.icon style={{ fontSize: "1.5rem" }} />
+              <span
+                style={{
+                  display: isOpen ? "block" : "none",
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  letterSpacing : "0.7px"
+                }}
+              >
                 {item.heading}
               </span>
             </div>
           );
         })}
         <div className="menuItem">
-          <MdLogout />
+          <MdLogout style={{ fontSize: "1.5rem" }} />
         </div>
       </div>
     </div>
