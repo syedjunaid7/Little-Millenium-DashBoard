@@ -3,6 +3,7 @@ import "./Sidebar.scss";
 import { SidebarData } from "../../Data/Data";
 import { MdLogout } from "react-icons/md";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
+import {SiArkecosystem} from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
@@ -18,10 +19,10 @@ const Sidebar = () => {
     <div className="SideBarcontainer">
       <div style={{ width: isOpen ? "200px" : "80px" }} className="sidebar">
         <div className="top_section">
-          <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-            Logo
-          </h1>
-          <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
+          <div style={{ display: isOpen ? "block" : "none" }} className="logo">
+            <SiArkecosystem />
+          </div>
+          <div style={{ marginLeft: isOpen ? "50px" : "0px"}} className="bars">
             <HiMiniBars3CenterLeft onClick={toggle} style={{cursor : "pointer"}}/>
           </div>
         </div>

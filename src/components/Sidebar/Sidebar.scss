@@ -1,6 +1,4 @@
-.SideBarcontainer {
-  // height: 100vh;
-}
+
 .menuItem {
   display: flex;
   align-items: center;
@@ -38,25 +36,32 @@
   // background: #e8f1ff;
   backdrop-filter: blur(10px);
   background: #f8fcff;
-
+  position: sticky;
+  top: 0;
   box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.153);
-  height: 100vh;
+  height: 100dvh;
   transition: all 0.5s;
   bottom: 0;
 }
 .top_section {
   display: flex;
-  padding-top: 2.5rem;
-  padding: 2.5rem 1.5rem 0 1.5rem;
-  h1 {
-    margin: 0;
-    translate: 0 -0.8rem;
-  }
+  background: rgba(0, 0, 0, 0.148);
+  // padding-top: 2.5rem;
+  gap: 2rem;
+  padding: 1.3rem 0 0.4rem  0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 .logo {
-  font-size: 30px;
+  font-size: 35px;
+  // display: flex;
+  cursor: pointer;
+
 }
 .bars {
-  display: flex;
+  // display: flex;
   font-size: 25px;
+ 
 }
