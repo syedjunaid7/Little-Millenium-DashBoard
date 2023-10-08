@@ -12,13 +12,13 @@ export default function Topbar() {
   const [userData, setUserData] = useState(userDataLocal);
   useEffect(() => {
     setUserData(userDataLocal);
-  }, [userDataLocal.userPic, userDataLocal.userName]);
+  }, []);
   return (
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
           <h2>
-            Hey, <span style={{ color: "#0ea5e9" }}>{userData.userName}</span>
+            Hey, <span style={{ color: "#0ea5e9" }}>{userData?.userName}</span>
           </h2>
         </div>
         <div className="topRight">
@@ -33,7 +33,7 @@ export default function Topbar() {
           <div className="topbarIcons">
             <SettingsIcon />
           </div>
-          <img src={userData.userPic} alt="avatar" />
+          <img src={userData?.userPic} alt="avatar" />
         </div>
       </div>
       <hr />

@@ -1,19 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./EditProfile.scss";
 import { useState } from "react";
-
-const blobToBase64 = (blob) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      resolve(reader.result);
-    };
-    reader.onerror = (error) => {
-      reject(error);
-    };
-    reader.readAsDataURL(blob);
-  });
-};
+import axios from "axios";
 
 export default function EditProfile({ setisEdit, setimgData, imgData }) {
   const value = JSON.parse(localStorage.getItem("details"));
@@ -21,27 +9,24 @@ export default function EditProfile({ setisEdit, setimgData, imgData }) {
   const [userEmail, setUserEmail] = useState(value?.userEmail);
   const [userPhone, setUserPhone] = useState(value?.userPhone);
 
-  const handleUpdate = async (e) => {
+
+
+  const handleUpdate = (e) => {
     e.preventDefault();
-    try {
-      const userDetails = {
-        userName: userName,
-        userEmail: userEmail,
-        userPhone: userPhone,
-        userPic: imgData,
-      };
-      const userDetailsString = JSON.stringify({
-        ...userDetails,
-        userPic: imgData instanceof Blob ? await blobToBase64(imgData) : imgData,
-      });
-      localStorage.setItem("details", userDetailsString);
-      setisEdit(false);
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      // Handle the error gracefully (e.g., show a message to the user)
-    }
+    axios
+    .post("https://651af42a340309952f0e1806.mockapi.io/products", {pic : {
+      userPic: imgData,
+    }})
+    const userDetails = {
+      userName: userName,
+      userEmail: userEmail,
+      userPhone: userPhone,
+      // userPic: imgData,
+    };
+    const userDetailsString = JSON.stringify(userDetails);
+    localStorage.setItem("details", userDetailsString);
+    setisEdit(false);
   };
-  
 
   return (
     <div className="editProfileBox">

@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export default function Edit() {
     
     useEffect(() => {
-        axios("https://651af42a340309952f0e1806.mockapi.io/products")
+        axios("https://651af42a340309952f0e1806.mockapi.io/Products")
         .then((data) => {
 
         })
