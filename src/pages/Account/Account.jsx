@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Account.scss";
 import EditProfile from "../../components/EditProfile/EditProfile";
 import AccountProfile from "../../components/AccountProfile/AccountProfile";
-
+import profileImg from "../../assets/profile.jpg"
 export default function Account() {
   const [isEdit, setisEdit] = useState(false);
   const [imgData, setimgData] = useState("");
@@ -14,7 +14,9 @@ export default function Account() {
   console.log(imgData);
   return (
     <div className="accountContainer">
-      <img src={imgData} />
+      <div>
+        <img src={imgData} alt="no-image"/>
+      </div>
       {isEdit ? (
         <EditProfile
           setisEdit={setisEdit}

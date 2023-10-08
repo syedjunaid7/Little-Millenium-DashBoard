@@ -2,30 +2,52 @@ import React from "react";
 import "./EditProfile.scss";
 import { useState } from "react";
 
+const blobToBase64 = (blob) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      resolve(reader.result);
+    };
+    reader.onerror = (error) => {
+      reject(error);
+    };
+    reader.readAsDataURL(blob);
+  });
+};
+
 export default function EditProfile({ setisEdit, setimgData, imgData }) {
   const value = JSON.parse(localStorage.getItem("details"));
   const [userName, setUserName] = useState(value?.userName);
   const [userEmail, setUserEmail] = useState(value?.userEmail);
   const [userPhone, setUserPhone] = useState(value?.userPhone);
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
-    const userDetails = {
-      userName: userName,
-      userEmail: userEmail,
-      userPhone: userPhone,
-      userPic: imgData,
-    };
-    const userDetailsString = JSON.stringify(userDetails);
-    localStorage.setItem("details", userDetailsString);
-    setisEdit(false);
+    try {
+      const userDetails = {
+        userName: userName,
+        userEmail: userEmail,
+        userPhone: userPhone,
+        userPic: imgData,
+      };
+      const userDetailsString = JSON.stringify({
+        ...userDetails,
+        userPic: imgData instanceof Blob ? await blobToBase64(imgData) : imgData,
+      });
+      localStorage.setItem("details", userDetailsString);
+      setisEdit(false);
+    } catch (error) {
+      console.error("Error updating profile:", error);
+      // Handle the error gracefully (e.g., show a message to the user)
+    }
   };
+  
 
   return (
     <div className="editProfileBox">
       <div className="inputMainBox2">
         <div className="imgBox">
-          <span class="btn btn-default btn-file">
+          <span className="btn btn-default btn-file">
             Choose File
             <input
               type="file"
